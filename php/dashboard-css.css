@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: Consolas;
+}
+
+#top, #bottom {
+    width: 1000px;
+    overflow: hidden;
+    zoom: 1;
+    margin: 25px auto 20px auto;
+}
+
+/*#top {*/
+/*    margin-top: 150px;*/
+/*}*/
+
+.test {
+    color: red;
+}
+
+#userinfo {
+    float: left;
+    margin: 0px 150px 0px 0px;
+}
+
+#userinfo p {
+    font-size: 20px;
+}
+
+#book_actions {
+    width: 225px;
+    height: 225px;
+    float: left;
+    zoom: 1;
+}
+
+#upper_buttons, #lower_buttons {
+    height: 50%;
+}
+
+#upper_buttons button, #lower_buttons button {
+    width: 50%;
+    height: 100%;
+    float: left;
+    font-size: 18px;
+}
+
+#bottom form input {
+    font-size: 17px;
+}

@@ -1,0 +1,20 @@
+#top-header ul li {
+    list-style-type: none;
+    float: left;
+    padding: 10px 20px;
+}
+
+#top-header {
+    overflow: hidden;
+    zoom: 1;
+}
+
+#user-app-box, #borrow-app-box, #delay-app-box {
+    position: absolute;
+    display: none;
+}
+
+#userinfo ul {
+    position: relative;
+}
+
