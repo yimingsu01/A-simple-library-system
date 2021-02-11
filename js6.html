@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <link href="js6.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="total_container">
+    <img src="http://t.bgy.gd.cn:8888/Content/images/Home/Index/Pic_Show/zh-CN/top_01.jpg" alt="1"/>
+    <img src="http://t.bgy.gd.cn:8888/Content/images/Home/Index/Pic_Show/zh-CN/top_02.jpg" alt="2"/>
+    <img src="http://t.bgy.gd.cn:8888/Content/images/Home/Index/Pic_Show/zh-CN/top_03.jpg" alt="3"/>
+    <img src="http://t.bgy.gd.cn:8888/Content/images/Home/Index/Pic_Show/zh-CN/top_04.jpg" alt="4"/>
+</div>
+<script>
+    var e = document.getElementById("total_container").getElementsByTagName("img");
+    var current = 0;
+    var opacity = 1.0;
+    e[0].style.opacity = 1;
+    for (let i = 1; i < 4; i++) {
+        e[i].style.opacity = 0;
+    }
+    var timer = setInterval(switchPic, 2500);
+    var next;
+
+    function switchPic() {
+        console.log(current);
+        opacity = 1.0;
+        if (current + 1 == 4) {
+            next = 0;
+        } else {
+            next = current + 1;
+        }
+        console.log("next: " + next);
+        console.log("e[current] opacity: " + e[current].style.opacity);
+        console.log("e[next] opacity: " + e[next].style.opacity);
+        var innerTimer = setInterval(swap, 50);
+        function swap() {
+            if (opacity >= 0) { // e[next].style.opacity <= 1
+                opacity = opacity - 0.1;
+                e[current].style.opacity = opacity;
+                e[next].style.opacity = 1 - opacity;
+                if (e[current].style.opacity > 1) {
+                    e[current].style.opacity = 1;
+                }
+                if (e[next].style.opacity > 1) {
+                    e[next].style.opacity = 1;
+                }
+            } else {
+                clearInterval(innerTimer);
+            }
+        }
+        current ++;
+        e[current - 1].style.opacity = 0;
+        if (current == 4) {
+            current = 0;
+        }
+    }
+
+</script>
+</body>
+</html>
